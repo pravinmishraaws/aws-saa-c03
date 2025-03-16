@@ -41,3 +41,41 @@
 - Requires manual MFA configuration.
 - Best suited for organizations needing centralized identity management.
 
+### **Designing a Security Strategy for Multiple AWS Accounts (AWS Control Tower, SCPs) - Key Points for AWS SAA-C03 Exam**
+
+#### **1. Multi-Account Security Strategy**
+- Use **AWS Organizations** to manage multiple AWS accounts centrally.
+- Apply **Service Control Policies (SCPs)** to enforce security controls across accounts.
+- Use **AWS Control Tower** for automated multi-account governance.
+
+#### **2. AWS Control Tower**
+- Provides **centralized governance** using **AWS Organizations, SCPs, IAM Identity Center, and AWS Config**.
+- Implements **Landing Zones** (pre-configured secure AWS account setups).
+- Enforces security best practices via **Guardrails** (Preventive and Detective).
+- Supports **Account Factory** for account provisioning.
+
+#### **3. Service Control Policies (SCPs)**
+- Enforce **organization-wide security policies** across AWS accounts.
+- Do not grant permissions; they **restrict IAM permissions**.
+- Applied at the **OU (Organizational Unit) or account level**.
+- Used to **restrict actions such as disabling logging, creating new IAM roles, or deleting security services**.
+
+#### **4. Security Best Practices**
+- **Use SCPs** to enforce security across all accounts.
+- **Enable AWS Security Hub** and **AWS Config** for compliance monitoring.
+- **Enforce MFA** using IAM Identity Center for access control.
+- **Use AWS CloudTrail** and **AWS Config** for auditing and logging.
+- **Create dedicated accounts** for security, logging, and networking.
+
+#### **5. Exam Scenarios**
+- **Applying security policies across multiple AWS accounts** → Use SCPs.
+- **Implementing automated account setup and security best practices** → Use AWS Control Tower.
+- **Preventing a user from disabling logging** → Enforce SCP to deny CloudTrail and Config changes.
+- **Managing federated access to multiple AWS accounts** → Use IAM Identity Center.
+
+#### **6. Exam Tips**
+- SCPs do not grant permissions; they **only restrict actions**.
+- AWS Control Tower **automates multi-account security governance**.
+- Always **use AWS Organizations for managing multiple AWS accounts**.
+- **Restrict root account access** and enforce **MFA for all users**.
+- **Enable centralized logging and monitoring** via AWS CloudTrail, Security Hub, and Config.
